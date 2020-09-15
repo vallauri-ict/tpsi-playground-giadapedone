@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Domotica Pedone Giada</title>
+    <script src="JS/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        /*VIETATO MODIFICARE QUESTA SEZIONE*/
+        COMANDI = new Array("Vialetto", "Illuminazione", "Tenda", "Antifurto", "Irrigazione", "Emergenza");
+        LIGHTS = new Array("Studio1", "Studio2", "SalaPrelievi", "SalaAttesa", "AccendiTutte", "SpegniTutte");
+    </script>
+    <script type="text/javascript" src="JS/js.js"></script>
+    <style>
+        #map {
+            background-image: url('./img/map.png');
+            background-repeat: no-repeat;
+            position: absolute;
+            border: 2px solid;
+            height: 400px;
+            width: 700px;
+        }
+        #comandi {
+            position:absolute;
+            border: 2px solid;
+            border-radius: 15px;
+            height: 150px;
+            width: 700px;
+            top:  430px;
+        }
+        .lamp {
+            position: absolute;
+            background-image: url('./img/lamp.png');
+            height: 40px;
+            width: 30px;
+        }
+        .lampOff {
+            background-color: rgb(255, 255, 255);
+
+        }
+        .lampOn {
+            background-color: rgb(254, 255, 120);
+        }
+        #lamp1 {
+            top:75px;
+            left:180px;
+        }
+        #lamp2 {
+            top: 75px;
+            left: 300px;
+        }
+        #lamp3 {
+            top: 75px;
+            left: 430px;
+        }
+        #lamp4 {
+            top: 300px;
+            left: 340px;
+        }
+        .pulsante {
+            position: relative;
+            width: 205px;
+            height: 55px;
+            border-radius: 5px;
+            top: 10px;
+            margin-left: 20px;
+            display: inline-grid;
+            border: 1px solid;
+            line-height:55px;
+            text-align:center;
+            font-size:20px;
+            font-family:'Comic Sans MS';
+            font-weight:200;
+        }
+        .row {
+            height: 75px;
+            width: 700px;
+        }
+        #extra {
+            position: absolute;
+            width: 200px;
+            height: 572px;
+            border: 2px solid;
+            border-radius: 15px;
+            left: 730px;
+            visibility:hidden;
+
+        }
+        .rights {
+            position: relative;
+            left: 10px;
+            margin-top: 10px;
+            height: 70px;
+            line-height: 70px;
+            width: 180px;
+            border: 1px solid;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Comic Sans MS';
+            font-weight: 200;
+        }
+        #hider {
+            position: absolute;
+            border: 1px solid;
+            border-radius: 5px;
+            left: 10px;
+            top: 520px;
+            height: 40px;
+            width: 180px;
+            text-align: center;
+            line-height: 40px;
+            font-size: 20px;
+            font-family: 'Comic Sans MS';
+            font-weight: 200;
+        }
+        #vialetto {
+            height:360px;
+            width:100px;
+            position:absolute;
+            left:45px;
+            top:20px;
+
+        }
+        #roll {
+            position:absolute;
+            width:165px;
+            height:15px;
+            background-image:url('./img/roll.png');
+            left:405px;
+            top:271px;
+        }
+        #tenda {
+            position: absolute;
+            width: 165px;
+            height: 95px;
+            background-image: url('./img/tenda.png');
+            left: 405px;
+            top: 286px;
+            visibility: hidden;
+        }
+        .irrigatore {
+            position: absolute;
+            background-image: url('./img/irrigatore.png');
+            height: 60px;
+            width: 60px;
+            left: 610px;
+            visibility:hidden;
+        }
+        #irr1 {
+            top:70px;
+        }
+        #irr2 {
+            top: 200px;
+        }
+    </style>
+</head>
+<body>
+<div id="map">
+    <div id="roll"></div>
+    <div id="tenda"></div>
+    <div id="irr1" class="irrigatore"></div>
+    <div id="irr2" class="irrigatore"></div>
+</div>
+<div id="comandi">
+    <div id="firstRow" class="row"></div>
+    <div id="secondRow" class="row"></div>
+</div>
+<div id="extra"><div id="hider">Nascondi Sezione</div></div>
+</body>
+</html>
